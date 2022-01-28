@@ -1,4 +1,3 @@
-import React from "react";
 import Component2 from "./component2";
 
 const Component1 = ({ myArr }) => {
