@@ -4,14 +4,12 @@ class Counter extends Component {
   constructor() {
     super();
 
-    this.state = {
-      value: 0,
-    };
+    this.state = { value: 0 };
 
     this.handleClick = (operation) => {
       operation === "add" ? this.state.value++ : this.state.value--;
       if (this.state.value < 0) this.state.value = 0;
-      this.setState({ value: this.state.value });
+      this.setState({ value: this.state.value })
     };
 
     this.button = {
@@ -31,7 +29,7 @@ class Counter extends Component {
     };
 
     this.text = {
-      fontFamily: "'Mulish', sans-serif",
+      fontFamily: "'Supermercado One', cursive"
     };
   }
 
