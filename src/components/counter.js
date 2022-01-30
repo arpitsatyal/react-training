@@ -35,7 +35,7 @@ class Counter extends Component {
 
   render() {
     return (
-        <div style={{ margin: '0 auto', width: '700px', display: 'block' }}>
+        <div style={{ margin: '100px 600px' }}>
           <h1 style={this.text}>React Counter demo</h1>
           <button style={this.button} onClick={() => this.handleClick("add")}>
             +
