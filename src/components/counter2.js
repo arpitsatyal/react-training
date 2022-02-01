@@ -25,6 +25,7 @@ const counter2 = () => {
 
   return (
     <div style={{ margin: "100px 600px" }}>
+
       <h1 style={text}>React Counter demo</h1>
       <button style={button} onClick={setCounter(() => handleClick('add'))}>
         +
