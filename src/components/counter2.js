@@ -26,13 +26,13 @@ const counter2 = () => {
   return (
     <div style={{ margin: "100px 600px" }}>
       <h1 style={text}>React Counter demo</h1>
-      <button style={button} onClick={setCounter(handleClick('add'))}>
+      <button style={button} onClick={setCounter(() => handleClick('add'))}>
         +
       </button>
       <span style={text}>{counter}</span>
       <button
         style={{ ...button, marginLeft: "30px" }}
-        onClick={setCounter(handleClick('subtract'))}
+        onClick={setCounter(() => handleClick('subtract'))}
       >
         -
       </button>

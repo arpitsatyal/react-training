@@ -1,28 +1,34 @@
-// import Component1 from "./components/component1";
-// import Demo from "./components/form";
-// import LifeCycle from "./components/lifecycle";
-import Counter from "./components/counter";
-
-import './index.css';
+import Component1 from "./components/component1";
+import Component2 from "./components/component2";
+import Demo from "./components/list";
+import Counter2 from "./components/counter";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import "./index.css";
+import HooksCake from "./components/hooksCake";
+import HooksIceCream from "./components/hooksIceCream";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Auth from "./components/auth";
+import SignIn from './components/signIn';
 
 function App() {
-  // const arr = [1,2,3,4,5];
+  const arr = [1, 2, 3, 4, 5];
   return (
-    <div>
-      {
-       /*
-      ---for practice purpose---
-
-      <h1>hello world from parent</h1>
-      <Component1 myArr={arr}/>
-      <Demo />
-      <LifeCycle />
-      */ 
-      }
-
-      <Counter />
-    </div>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SignIn />}/>
+          <Route element={<Auth />}>
+          <Route path="/counter" element={<Counter2 />} />
+          <Route path="/list" element={<Demo />} />
+          <Route path="/c1/:num" element={<Component1 myArr={arr} />} />
+          <Route path="/c2" element={<Component2 myArr={arr} />} />
+          <Route path="/cake" element={<HooksCake />} />
+          <Route path="/ice-cream" element={<HooksIceCream />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Provider>
   );
 }
-
 export default App;
