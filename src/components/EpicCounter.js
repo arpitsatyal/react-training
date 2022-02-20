@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 
-const counter2 = () => {
+const EpicCounter = () => {
   const [counter, setCounter] = useState(0);
+
+  useEffect(() => {
+    console.log("use effect called.");
+  }, []);
 
   const button = {
     backgroundColor: "#EA4C89",
@@ -23,17 +27,21 @@ const counter2 = () => {
     fontFamily: "'Supermercado One', cursive",
   };
 
+  const handleClick = (operation) =>
+    operation === "add"
+      ? setCounter((prev) => prev + 1)
+      : setCounter((prev) => prev - 1);
+
   return (
     <div style={{ margin: "100px 600px" }}>
-
       <h1 style={text}>React Counter demo</h1>
-      <button style={button} onClick={setCounter(() => handleClick('add'))}>
+      <button style={button} onClick={() => handleClick("add")}>
         +
       </button>
       <span style={text}>{counter}</span>
       <button
         style={{ ...button, marginLeft: "30px" }}
-        onClick={setCounter(() => handleClick('subtract'))}
+        onClick={() => handleClick("subtract")}
       >
         -
       </button>
@@ -41,4 +49,4 @@ const counter2 = () => {
   );
 };
 
-export default counter2;
+export default EpicCounter;

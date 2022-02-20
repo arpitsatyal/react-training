@@ -1,4 +1,3 @@
-import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { login } from '../redux/auth/authActions';
@@ -6,7 +5,7 @@ import { login } from '../redux/auth/authActions';
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  
+
   function logTheUserIn() {
     dispatch(login());
     navigate('/');
